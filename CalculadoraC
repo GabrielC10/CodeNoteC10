@@ -28,6 +28,11 @@ int menos(int R1, int R2){
 	resultado = R1 - R2;
 	return(resultado);
 }
+int chave(int R1, int R2){
+	int resultado;
+	resultado = R1 / R2;
+	return(resultado);
+}
 /*========== VARIÁVEIS ==========*/ 
 
 int main(void) 
@@ -52,6 +57,7 @@ int main(void)
     
     printf("SOBRENOME: ");
     scanf("%s", sobrenome);
+    system("cls");
     printf("\nOlá Senhor(a) %s, %s. Bem-Vindo ao seu sistema!\n\n", nome, sobrenome, setlocale(LC_ALL, "Portuguese"));
     
                         /*========== NOME EM STRING ==========*/
@@ -61,7 +67,14 @@ int main(void)
     int resp;
     do
 	{
-    printf("1 - MULTIPLICAÇÃO\n2 - ADIÇÃO\n3 - SUBTRAÇÃO\n4 - SAIR\n");
+    printf("|============================================================|\n"); 
+    printf("|                   Projeto Calculadora                      |\n");  
+    printf("|	         Script Editado por Gabriel                  |\n");  
+    printf("|              Data de Modificação 21/02/2018                |\n");
+    printf("|         Editado na Linguagem C, e codificado 2018          |\n");
+    printf("|                         v.1                                |\n");  
+    printf("|============================================================|\n\n");
+    printf("1 - MULTIPLICAÇÃO\n2 - ADIÇÃO\n3 - SUBTRAÇÃO\n4 - DIVISÃO\n5 - SAIR\n");
     opcao = getch();
        switch (opcao) 
 	   {
@@ -95,10 +108,21 @@ int main(void)
         scanf("%d", &V1); 
         printf("Segundo Valor: ");
         scanf("%d", &V2); 
-        resultado = menos(V1,V2); //Subtraí
+        resultado = menos(V1,V2); //Subtrai
         printf("Resultado = %d\n\n", resultado); //Obtém o Resultado.
         break;
     case '4':
+    	system("color 0A"); 
+        system("cls");
+        printf("DIVISÃO\n");
+        printf("Primeiro Valor: ");
+        scanf("%d", &V1); 
+        printf("Segundo Valor: ");
+        scanf("%d", &V2); 
+        resultado = chave(V1,V2); //Subtrai
+        printf("Resultado = %d\n\n", resultado); //Obtém o Resultado.
+        break;
+    case '5':
     	system("color 0F"); 
         system("cls");
           printf("|============================================================|\n"); 
@@ -123,10 +147,10 @@ int main(void)
     printf("Digite 1 para continuar ou 2 para sair\n");
     printf("--------------------------------------------------\n");
     scanf("%d", &resp);
+    system("cls");
     
     }while(resp==1);
 	return 0;
-    
 }
 
                         /*========== CALCULADORA ==========*/
